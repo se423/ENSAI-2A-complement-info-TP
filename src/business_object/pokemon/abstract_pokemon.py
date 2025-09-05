@@ -12,7 +12,14 @@ class AbstractPokemon(ABC):
     # Constructor
     # -------------------------------------------------------------------------
 
-    def __init__(self, stat_max=None, stat_current=None, level=0, name=None, type_pk=None):
+    def __init__(
+        self,
+        stat_max: Statistic | None = None,
+        stat_current: Statistic | None = None,
+        level: int = 0,
+        name: str | None = None,
+        type_pk: str | None = None
+                ):
         # -----------------------------
         # Attributes
         # -----------------------------
@@ -84,10 +91,6 @@ class AbstractPokemon(ABC):
     @property
     def sp_def(self):
         return self._stat_max.sp_def
-
-    @property
-    def speed(self):
-        return self._stat_max.speed
 
     @property
     def attack_current(self):
